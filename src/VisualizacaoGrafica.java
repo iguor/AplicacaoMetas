@@ -8,34 +8,29 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-public class VisualizacaoGrafica extends JPanel implements Visualizacao {
+public class VisualizacaoGrafica extends JPanel {
+    private DefaultCategoryDataset dataset;
 
     public VisualizacaoGrafica() {
-        setLayout(new BorderLayout());
-    }
-
-    @Override
-    public void exibirGraficos(List<Meta> metas) {
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-
-        for (Meta meta : metas) {
-            dataset.addValue(meta.getProgresso(), "Progresso", meta.getDescricao());
-        }
-
+        dataset = new DefaultCategoryDataset();
         JFreeChart barChart = ChartFactory.createBarChart(
                 "Progresso das Metas ESG",
                 "Meta",
-                "Progresso (%)",
+                "Percentual",
                 dataset,
                 PlotOrientation.VERTICAL,
-                false, true, false);
+                true, true, false);
 
         ChartPanel chartPanel = new ChartPanel(barChart);
-        chartPanel.setPreferredSize(new Dimension(800, 600));
+        chartPanel.setPreferredSize(new Dimension(700, 400));
+        add(chartPanel);
+    }
 
-        removeAll();
-        add(chartPanel, BorderLayout.CENTER);
-        revalidate();
-        repaint();
+    public void atualizarGrafico(List<Meta> metas) {
+        dataset.clear();
+        for (Meta meta : metas) {
+            dataset.addValue(meta.getProgresso(), "Progresso", meta.getDescricao());
+            dataset.addValue(meta.getDiferenca(), "Diferença", meta.getDescricao());
+        }
     }
 }

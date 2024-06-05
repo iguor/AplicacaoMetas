@@ -5,14 +5,16 @@ public class Meta {
     private String descricao;
     private LocalDate dataInicio;
     private LocalDate dataTermino;
-    private double progresso;
+    private int valorDesejado;
+    private int valorAlcancado;
 
-    public Meta(int idMeta, String descricao, LocalDate dataInicio, LocalDate dataTermino, double progresso) {
+    public Meta(int idMeta, String descricao, LocalDate dataInicio, LocalDate dataTermino, int valorAlcancado) {
         this.idMeta = idMeta;
         this.descricao = descricao;
         this.dataInicio = dataInicio;
         this.dataTermino = dataTermino;
-        this.progresso = progresso;
+        this.valorDesejado = 100; // Valor desejado padrão para simplificar
+        this.valorAlcancado = valorAlcancado;
     }
 
     public int getIdMeta() {
@@ -47,11 +49,27 @@ public class Meta {
         this.dataTermino = dataTermino;
     }
 
-    public double getProgresso() {
-        return progresso;
+    public int getValorDesejado() {
+        return valorDesejado;
     }
 
-    public void setProgresso(double progresso) {
-        this.progresso = progresso;
+    public void setValorDesejado(int valorDesejado) {
+        this.valorDesejado = valorDesejado;
+    }
+
+    public int getValorAlcancado() {
+        return valorAlcancado;
+    }
+
+    public void setValorAlcancado(int valorAlcancado) {
+        this.valorAlcancado = valorAlcancado;
+    }
+
+    public double getProgresso() {
+        return (double) valorAlcancado / valorDesejado * 100;
+    }
+
+    public double getDiferenca() {
+        return 100 - getProgresso();
     }
 }
