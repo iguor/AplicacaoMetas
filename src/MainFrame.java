@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
     private ControladorMetas controlador;
-    private VisualizacaoGrafica visualizacao;
+    private VisualizacaoGrafica grafico;
 
     public MainFrame() {
         setTitle("Gerenciamento de Metas ESG");
@@ -11,14 +11,14 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        visualizacao = new VisualizacaoGrafica();
-        controlador = new ControladorMetas(visualizacao);
+        grafico = new VisualizacaoGrafica();
+        controlador = new ControladorMetas(grafico);
 
         InterfaceMetas interfaceMetas = new InterfaceMetas(controlador);
 
         setLayout(new BorderLayout());
-        add(interfaceMetas.getGrafico(), BorderLayout.NORTH);
-        add(visualizacao, BorderLayout.CENTER);
+        add(interfaceMetas.getPainel(), BorderLayout.NORTH);
+        add(grafico, BorderLayout.CENTER);
     }
 
     public static void main(String[] args) {

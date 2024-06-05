@@ -5,8 +5,8 @@ import java.util.List;
 
 public class PainelMetas extends JPanel {
     private List<Meta> metas;
-    private JTable table;
-    private DefaultTableModel model;
+    private JTable tabela;
+    private DefaultTableModel modelo;
 
     public PainelMetas(List<Meta> metas) {
         this.metas = metas;
@@ -16,24 +16,19 @@ public class PainelMetas extends JPanel {
 
     private void inicializarTabela() {
         String[] colunas = {"ID", "Descrição", "Ano Início", "Ano Término", "Valor Desejado", "Valor Alcançado", "Progresso"};
-        model = new DefaultTableModel(colunas, 0);
+        modelo = new DefaultTableModel(colunas, 0);
 
         for (Meta meta : metas) {
             adicionarMetaNaTabela(meta);
         }
 
-        table = new JTable(model);
-        add(new JScrollPane(table), BorderLayout.CENTER);
-    }
-
-    public void adicionarMeta(Meta meta) {
-        metas.add(meta);
-        adicionarMetaNaTabela(meta);
+        tabela = new JTable(modelo);
+        add(new JScrollPane(tabela), BorderLayout.CENTER);
     }
 
     private void adicionarMetaNaTabela(Meta meta) {
         Object[] linha = {
-                meta.getIdMeta(),
+                meta.getId(),
                 meta.getDescricao(),
                 meta.getAnoInicio(),
                 meta.getAnoTermino(),
@@ -41,6 +36,6 @@ public class PainelMetas extends JPanel {
                 meta.getValorAlcancado(),
                 meta.getProgresso()
         };
-        model.addRow(linha);
+        modelo.addRow(linha);
     }
 }

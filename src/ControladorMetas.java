@@ -2,18 +2,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorMetas {
-    private List<Meta> metas;
-    private VisualizacaoGrafica visualizacaoGrafica;
+    private List<Meta> listaDeMetas;
+    private VisualizacaoGrafica grafico;
 
-    public ControladorMetas(VisualizacaoGrafica visualizacaoGrafica) {
-        this.metas = new ArrayList<>();
-        this.visualizacaoGrafica = visualizacaoGrafica;
+    public ControladorMetas(VisualizacaoGrafica grafico) {
+        this.listaDeMetas = new ArrayList<>();
+        this.grafico = grafico;
     }
 
     public void adicionarMeta(String descricao, int anoInicio, int anoTermino, int valorDesejado, int valorAlcancado) {
-        int novoId = metas.size() + 1;
-        Meta novaMeta = new Meta(novoId, descricao, anoInicio, anoTermino, valorDesejado, valorAlcancado);
-        metas.add(novaMeta);
-        visualizacaoGrafica.atualizarGrafico(metas);
+        int idNovaMeta = listaDeMetas.size() + 1;
+        Meta novaMeta = new Meta(idNovaMeta, descricao, anoInicio, anoTermino, valorDesejado, valorAlcancado);
+        listaDeMetas.add(novaMeta);
+        grafico.atualizarGrafico(listaDeMetas);
     }
 }
