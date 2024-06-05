@@ -13,13 +13,7 @@ public class VisualizacaoGrafica extends JPanel {
 
     public VisualizacaoGrafica() {
         dataset = new DefaultCategoryDataset();
-        JFreeChart barChart = ChartFactory.createBarChart(
-                "Progresso das Metas ESG",
-                "Meta",
-                "Valor",
-                dataset,
-                PlotOrientation.VERTICAL,
-                true, true, false);
+        JFreeChart barChart = ChartFactory.createBarChart("Progresso das Metas ESG", "Meta", "Valor", dataset, PlotOrientation.VERTICAL, true, true, false);
 
         ChartPanel chartPanel = new ChartPanel(barChart);
         chartPanel.setPreferredSize(new Dimension(700, 400));
