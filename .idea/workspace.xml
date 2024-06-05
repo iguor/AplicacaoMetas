@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e19c4004-42a1-4e89-bf0d-49316fdae4a0" name="Changes" comment="Mais abstrações e correções">
+    <list default="true" id="e19c4004-42a1-4e89-bf0d-49316fdae4a0" name="Changes" comment="últimos ajustes, remoção da classe usuario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ControladorMetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControladorMetas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InterfaceMetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceMetas.java" afterDir="false" />
@@ -106,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717601571546</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="últimos ajustes, remoção da classe usuario">
+      <option name="closed" value="true" />
+      <created>1717630226396</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717630226396</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -114,6 +122,7 @@
     <MESSAGE value="Melhoria da interface," />
     <MESSAGE value="Melhorias e abstração" />
     <MESSAGE value="Mais abstrações e correções" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mais abstrações e correções" />
+    <MESSAGE value="últimos ajustes, remoção da classe usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="últimos ajustes, remoção da classe usuario" />
   </component>
 </project>
