@@ -15,7 +15,7 @@ public class PainelMetas extends JPanel {
     }
 
     private void inicializarTabela() {
-        String[] colunas = {"ID", "Descrição", "Data Início", "Data Término", "Progresso"};
+        String[] colunas = {"ID", "Descrição", "Ano Início", "Ano Término", "Valor Desejado", "Valor Alcançado", "Progresso"};
         model = new DefaultTableModel(colunas, 0);
 
         for (Meta meta : metas) {
@@ -35,8 +35,10 @@ public class PainelMetas extends JPanel {
         Object[] linha = {
                 meta.getIdMeta(),
                 meta.getDescricao(),
-                meta.getDataInicio(),
-                meta.getDataTermino(),
+                meta.getAnoInicio(),
+                meta.getAnoTermino(),
+                meta.getValorDesejado(),
+                meta.getValorAlcancado(),
                 meta.getProgresso()
         };
         model.addRow(linha);

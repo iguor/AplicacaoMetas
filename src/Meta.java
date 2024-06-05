@@ -1,19 +1,17 @@
-import java.time.LocalDate;
-
 public class Meta {
     private int idMeta;
     private String descricao;
-    private LocalDate dataInicio;
-    private LocalDate dataTermino;
+    private int anoInicio;
+    private int anoTermino;
     private int valorDesejado;
     private int valorAlcancado;
 
-    public Meta(int idMeta, String descricao, LocalDate dataInicio, LocalDate dataTermino, int valorAlcancado) {
+    public Meta(int idMeta, String descricao, int anoInicio, int anoTermino, int valorDesejado, int valorAlcancado) {
         this.idMeta = idMeta;
         this.descricao = descricao;
-        this.dataInicio = dataInicio;
-        this.dataTermino = dataTermino;
-        this.valorDesejado = 100; // Valor desejado padrão para simplificar
+        this.anoInicio = anoInicio;
+        this.anoTermino = anoTermino;
+        this.valorDesejado = valorDesejado;
         this.valorAlcancado = valorAlcancado;
     }
 
@@ -33,20 +31,20 @@ public class Meta {
         this.descricao = descricao;
     }
 
-    public LocalDate getDataInicio() {
-        return dataInicio;
+    public int getAnoInicio() {
+        return anoInicio;
     }
 
-    public void setDataInicio(LocalDate dataInicio) {
-        this.dataInicio = dataInicio;
+    public void setAnoInicio(int anoInicio) {
+        this.anoInicio = anoInicio;
     }
 
-    public LocalDate getDataTermino() {
-        return dataTermino;
+    public int getAnoTermino() {
+        return anoTermino;
     }
 
-    public void setDataTermino(LocalDate dataTermino) {
-        this.dataTermino = dataTermino;
+    public void setAnoTermino(int anoTermino) {
+        this.anoTermino = anoTermino;
     }
 
     public int getValorDesejado() {
@@ -70,6 +68,6 @@ public class Meta {
     }
 
     public double getDiferenca() {
-        return 100 - getProgresso();
+        return valorDesejado - valorAlcancado;
     }
 }

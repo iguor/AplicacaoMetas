@@ -16,7 +16,7 @@ public class VisualizacaoGrafica extends JPanel {
         JFreeChart barChart = ChartFactory.createBarChart(
                 "Progresso das Metas ESG",
                 "Meta",
-                "Percentual",
+                "Valor",
                 dataset,
                 PlotOrientation.VERTICAL,
                 true, true, false);
@@ -29,8 +29,8 @@ public class VisualizacaoGrafica extends JPanel {
     public void atualizarGrafico(List<Meta> metas) {
         dataset.clear();
         for (Meta meta : metas) {
-            dataset.addValue(meta.getProgresso(), "Progresso", meta.getDescricao());
-            dataset.addValue(meta.getDiferenca(), "Diferença", meta.getDescricao());
+            dataset.addValue(meta.getValorDesejado(), "Valor Desejado", meta.getDescricao());
+            dataset.addValue(meta.getValorAlcancado(), "Valor Alcançado", meta.getDescricao());
         }
     }
 }
