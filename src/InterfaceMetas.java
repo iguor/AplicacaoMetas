@@ -10,31 +10,31 @@ public class InterfaceMetas {
     private JTextField anoTerminoField;
     private JTextField valorDesejadoField;
     private JTextField valorAlcancadoField;
-    private JPanel panel;
+    private JPanel grafico;
 
     public InterfaceMetas(ControladorMetas controlador) {
         this.controlador = controlador;
-        panel = new JPanel(new GridLayout(6, 2));
+        grafico = new JPanel(new GridLayout(6, 2));
 
-        panel.add(new JLabel("Descrição da Meta:"));
+        grafico.add(new JLabel("Descrição da Meta:"));
         descricaoField = new JTextField();
-        panel.add(descricaoField);
+        grafico.add(descricaoField);
 
-        panel.add(new JLabel("Ano Início:"));
+        grafico.add(new JLabel("Ano Início:"));
         anoInicioField = new JTextField();
-        panel.add(anoInicioField);
+        grafico.add(anoInicioField);
 
-        panel.add(new JLabel("Ano Término:"));
+        grafico.add(new JLabel("Ano Término:"));
         anoTerminoField = new JTextField();
-        panel.add(anoTerminoField);
+        grafico.add(anoTerminoField);
 
-        panel.add(new JLabel("Valor Desejado:"));
+        grafico.add(new JLabel("Valor Desejado:"));
         valorDesejadoField = new JTextField();
-        panel.add(valorDesejadoField);
+        grafico.add(valorDesejadoField);
 
-        panel.add(new JLabel("Valor Alcançado:"));
+        grafico.add(new JLabel("Valor Alcançado:"));
         valorAlcancadoField = new JTextField();
-        panel.add(valorAlcancadoField);
+        grafico.add(valorAlcancadoField);
 
         JButton addButton = new JButton("Adicionar Meta");
         addButton.addActionListener(new ActionListener() {
@@ -43,11 +43,11 @@ public class InterfaceMetas {
                 adicionarMeta();
             }
         });
-        panel.add(addButton);
+        grafico.add(addButton);
     }
 
-    public JPanel getPanel() {
-        return panel;
+    public JPanel getGrafico() {
+        return grafico;
     }
 
     private void adicionarMeta() {
@@ -59,8 +59,8 @@ public class InterfaceMetas {
             int valorAlcancado = Integer.parseInt(valorAlcancadoField.getText());
 
             controlador.adicionarMeta(descricao, anoInicio, anoTermino, valorDesejado, valorAlcancado);
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(panel, "Por favor, insira valores numéricos válidos.", "Erro de Formato", JOptionPane.ERROR_MESSAGE);
+        } catch (NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(grafico, "Insira valores numéricos inteiros válidos.", "Erro formatação dos números", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

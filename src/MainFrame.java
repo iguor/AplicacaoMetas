@@ -17,7 +17,7 @@ public class MainFrame extends JFrame {
         InterfaceMetas interfaceMetas = new InterfaceMetas(controlador);
 
         setLayout(new BorderLayout());
-        add(interfaceMetas.getPanel(), BorderLayout.NORTH);
+        add(interfaceMetas.getGrafico(), BorderLayout.NORTH);
         add(visualizacao, BorderLayout.CENTER);
     }
 
